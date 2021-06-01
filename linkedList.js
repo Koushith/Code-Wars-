@@ -1,4 +1,5 @@
 class Node {
+  //this is a node
   constructor(val) {
     this.val = val;
     this.next = null;
@@ -6,6 +7,7 @@ class Node {
 }
 
 class SinglyLinkedList {
+  // this is a property of linked list
   constructor() {
     this.head = null;
     this.tail = null;
@@ -34,6 +36,43 @@ class SinglyLinkedList {
     this.length += 1;
     return this;
   }
+
+  // pop- removes from end
+  //  -if there are no nodes in the list, return undefined.
+  // loop through the list until you reach the tail.
+  // set the propertyy of the 2nd last node to null
+  // set the tail to be last 2nd node
+  // decrement the length by 1
+  // retrn the removed
+
+  pop() {
+    if (!this.head) {
+      return undefined;
+    } else {
+      var current = this.head;
+      var newTail = current;
+      while (current.next) {
+        newTail = current;
+        current = current.next;
+      }
+      this.tail = newTail;
+      this.tail.next = null;
+      this.length--;
+      if (this.length === 0) {
+        this.head = null;
+        this.tail = null;
+      }
+      return current;
+    }
+  }
+
+  // traverse(){
+  //   var current=this.head;
+  //   while(current){
+  //     console.log(current.val)
+  //     current=current.next;
+  //   }
+  // }
 }
 
 var list = new SinglyLinkedList();
