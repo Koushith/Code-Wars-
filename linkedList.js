@@ -96,8 +96,24 @@ class SinglyLinkedList {
 
   get(index) {
     if (index < 0 || index >= this.length) return null;
+    var counter = 0;
+    var current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
   }
 
+  // changing the value of node based on its position
+  set(value, index) {
+    var foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = value;
+      return true;
+    }
+    return false;
+  }
   // traverse(){
   //   var current=this.head;
   //   while(current){
