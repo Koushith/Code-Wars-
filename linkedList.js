@@ -114,6 +114,31 @@ class SinglyLinkedList {
     }
     return false;
   }
+  // insert at any index-
+  // there is a edegcase- dont return whole list- jsut return bool value- to stay consistant.
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    // if index is last- push
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    // if index is at 0- insert at begining
+    if (index === 0) return !!this.unShift(val);
+
+    // if index is somewhere middle
+    var newNode = new Node(val);
+    // get the node at given idex. -1 is previous one
+    var prev = this.get(index - 1);
+    var temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+
   // traverse(){
   //   var current=this.head;
   //   while(current){
