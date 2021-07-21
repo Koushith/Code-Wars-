@@ -23,4 +23,4 @@ function countDevelopers(list) {
   });
   return arr.length;
 }
-console.log(countDevelopers());
+console.log(countDevelopers(list));
