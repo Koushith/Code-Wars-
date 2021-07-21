@@ -3,7 +3,7 @@ You will be given an array of objects (hashes in ruby) representing data about d
 
 Your task is to return the number of JavaScript developers coming from Europe.
 
-For example, given the following list:
+For example, given the following list:-
 
 */
 
