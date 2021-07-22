@@ -23,4 +23,18 @@ function countDevelopers(list) {
   });
   return arr.length;
 }
-console.log(countDevelopers(list));
+
+// console.log(countDevelopers(list));
+
+// filter- filter out the js dev based on continent  dev and return their length
+
+function devCount(list) {
+  // filter out the devs from 'europe'
+  return (fromEurope = list.filter((conti) => conti.continent === 'Europe').length);
+}
+
+console.log(devCount(list));
+
+// filter only js devs
+console.log(list.filter((devs) => devs.language === 'JavaScript'));
+function onlyJs(list) {}
