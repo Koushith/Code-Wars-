@@ -26,3 +26,4 @@ const str2 = 'JavaScript is amazing';
 const strNew = 'JavaScript-is-amazing';
 
 console.log(str2.split(' ')); // ["javascript", "is", "amaizing"]
+console.log(str2.split('S')); // ["java "criptis amaizing"]
