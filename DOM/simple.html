@@ -14,6 +14,10 @@
         margin: 1px 2px;
         padding: 1px 4px;
       }
+      .highlight {
+        background: #ff0;
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -30,15 +34,59 @@
       <div id="callout2" class="callout fancy">
         <p>A single HTML element can have multiple classes.</p>
       </div>
+      <button data-action="highlight" data-containing="unique">Highlight paragraphs containing "unique"</button>
+      <button data-action="removeHighlights">Remove highlights</button>
     </div>
     <script>
-      function printDOM(node, prefix) {
-        console.log(prefix + node.nodeName);
-        for (let i = 0; i < node.childNodes.length; i++) {
-          printDOM(node.childNodes[i], prefix + '\t');
+      // function printDOM(node, prefix) {
+      //   console.log(prefix + node.nodeName);
+      //   for (let i = 0; i < node.childNodes.length; i++) {
+      //     printDOM(node.childNodes[i], prefix + '\t');
+      //   }
+      // }
+      // printDOM(document, '');
+      const para1 = document.getElementsByTagName('p')[0];
+      console.log(para1);
+      console.log(para1.textContent);
+      const p1 = document.createElement('p');
+      const p2 = document.createElement('p');
+      // text contnt- no tags
+      (p1.textContent = 'Full name is Koushith Amin'), (p2.textContent = 'Struggling to learn');
+      const parent = document.getElementById('content');
+      const firstChild = parent.childNodes[0];
+      parent.insertBefore(p1, firstChild);
+      parent.appendChild(p2);
+
+      function highlightParas(containing) {
+        if (typeof containing === 'string') containing = new RegExp(`\\b${containing}\\b`, 'i');
+        const paras = document.getElementsByTagName('p');
+        console.log(paras);
+        for (let p of paras) {
+          if (!containing.test(p.textContent)) continue;
+          p.classList.add('highlight');
         }
       }
-      printDOM(document, '');
+      highlightParas('unique');
+      const highlightActions = document.querySelectorAll('[data-action="highlight"]');
+      highlightActions[0].dataset;
+      console.log(highlightActions[0].dataset);
+      highlightActions[0].dataset.containing = 'giraffe';
+      highlightActions[0].dataset.caseSensitive = 'true';
+
+      for (let a of highlightActions) {
+        a.addEventListener('click', (evt) => {
+          evt.preventDefault();
+          highlightParas(a.dataset.containing);
+        });
+      }
+      const removeHighlightActions = document.querySelectorAll('[data-action="removeHighlights"]');
+      for (let a of removeHighlightActions) {
+        a.addEventListener('click', (evt) => {
+          console.log('event-click', evt);
+          evt.preventDefault();
+          removeParaHighlights();
+        });
+      }
     </script>
   </body>
 </html>
