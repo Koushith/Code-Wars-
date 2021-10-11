@@ -1,5 +1,6 @@
 /**
  * Stack is a linear Data Structure- Add and remove from Top- also known as LIFO
+ * Stack overflow is a programming error when too much memory is used on the call stack.
  *
  * Operations
  *
@@ -54,7 +55,10 @@ class Stack {
   }
 
   //  SIZE- Returns the size of the stack
-  size() {}
+  size() {
+    console.log(`${this.count} elements in stack`);
+    return this.count;
+  }
 
   // PRINT- Print the elements of stack
   print() {
