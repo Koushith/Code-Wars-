@@ -39,6 +39,16 @@ class HashTable {
     }
     return undefined;
   }
+
+  keys() {
+    const keyArrays = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keyArrays.push(this.data[i][0][0]);
+      }
+      return keyArrays;
+    }
+  }
 }
 
 const myHashTable = new HashTable(50);
