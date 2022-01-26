@@ -11,10 +11,7 @@ class Node {
 class LinkedList {
   constructor(value) {
     // A node has a vaue- can be anything. and pointer to next node.
-    this.head = {
-      value: value,
-      next: null,
-    };
+    this.head = new Node(value);
     // if there is no element, lail will be head (Last node)
     this.tail = this.head;
     this.length = 1;
