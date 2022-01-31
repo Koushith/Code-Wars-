@@ -89,6 +89,17 @@ class LinkedList {
     return this.printList();
   }
 
+  //remove at given index
+
+  remove(index, value) {
+    //check for paramenters
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
+  }
+
   //traverse or lookup
   traverseToIndex(index) {
     let counter = 0;
@@ -112,3 +123,5 @@ console.log('get index', myLinkedList.traverseToIndex(2));
 console.log('My LL', myLinkedList.printList());
 
 console.log(myLinkedList.insert(2, 20));
+console.log(myLinkedList.remove(2));
+console.log(myLinkedList.remove(2));

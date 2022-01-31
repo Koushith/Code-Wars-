@@ -1,46 +1,43 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
+// class Node {
+//   constructor(data) {
+//     this.data = data;
+//     this.next = null;
+//   }
+// }
 
-class LinkedList {
-  constructor(data) {
-    this.head = new Node(data);
-    this.tail = this.head;
-    this.length = 1;
-  }
+// class LinkedList {
+//   constructor(data) {
+//     this.head = new Node(data);
+//     this.tail = this.head;
+//     this.length = 1;
+//   }
 
-  //append-
+//   //append-
 
-  // create a new node- and add it to the end and change the tail
-  append(value) {
-    const newNode = new Node(value);
-    this.tail.next = newNode;
-    this.tail = newNode;
+//   // create a new node- and add it to the end and change the tail
+//   append(value) {
+//     const newNode = new Node(value);
+//     this.tail.next = newNode;
+//     this.tail = newNode;
+//     this.length++;
+//     return this;
+//   }
 
-    this.length++;
-    return this;
-  }
+//   //prepend
 
-  //prepend
+//   prepend(value) {
+//     const newNode = new Node(value);
+//     newNode.next = this.head;
+//     this.head = newNode;
+//     this.length++;
+//     return this;
+//   }
+// }
 
-  prepend(value) {
-    const newNode = new Node(value);
+// // const myLinkedList = new LinkedList(10);
+// // console.log(myLinkedList.append(5));
+// // console.log(myLinkedList.append(16));
 
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length++;
+// // console.log(myLinkedList.prepend(1));
 
-    return this;
-  }
-}
-
-let myLinkedList = new LinkedList(10);
-console.log(myLinkedList.append(5));
-console.log(myLinkedList.append(16));
-
-console.log(myLinkedList.prepend(1));
-
-// 10--->5-->16
+// // 10--->5-->16
