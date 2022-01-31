@@ -1,43 +1,27 @@
-// class Node {
-//   constructor(data) {
-//     this.data = data;
-//     this.next = null;
-//   }
-// }
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
 
-// class LinkedList {
-//   constructor(data) {
-//     this.head = new Node(data);
-//     this.tail = this.head;
-//     this.length = 1;
-//   }
+class LinkedList {
+  constructor(value) {
+    this.head = new Node(value);
+    this.tail = this.head;
+    this.length = 1;
+  }
 
-//   //append-
+  append(value) {
+    const newNode = new Node(value);
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
+}
 
-//   // create a new node- and add it to the end and change the tail
-//   append(value) {
-//     const newNode = new Node(value);
-//     this.tail.next = newNode;
-//     this.tail = newNode;
-//     this.length++;
-//     return this;
-//   }
+const llTest = new LinkedList(10);
+console.log(llTest.append(20));
 
-//   //prepend
-
-//   prepend(value) {
-//     const newNode = new Node(value);
-//     newNode.next = this.head;
-//     this.head = newNode;
-//     this.length++;
-//     return this;
-//   }
-// }
-
-// // const myLinkedList = new LinkedList(10);
-// // console.log(myLinkedList.append(5));
-// // console.log(myLinkedList.append(16));
-
-// // console.log(myLinkedList.prepend(1));
-
-// // 10--->5-->16
+// 10--->5-->16
