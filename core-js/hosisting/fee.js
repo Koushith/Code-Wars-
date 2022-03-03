@@ -44,7 +44,7 @@ function parent() {
   return hoisted();
 }
 
-console.log(parent());
+// console.log(parent());
 
 /**
  * when its comes to variable hosting, only the declaration with the value undefined is hoisted,
@@ -52,4 +52,46 @@ console.log(parent());
  * but in case of function declarations, the defnitions { whole body} is hoisted.
  *
  * now in such cases of multiple declaration (in same scope) with same identifier, the hoisting of variables is simply ignored. the interepretr comes across the function declaration and hoists it.the statement of variable assignment (which was not hoisted) is executed and “I’m a variable” is assigned to hoisted, which is a simple string value and not a function. Hence the error!
+ */
+
+/*********************************************************************************************** */
+
+//console.log(foo()); //3
+function foo() {
+  var bar = function () {
+    return 3;
+  };
+  return bar();
+  var bar = function () {
+    return 8;
+  };
+}
+
+/**
+ * returns 3 coz- goo itsself stored in global memory and inside there is a function exporession- which isa treadted as a vaiable and in the first phase it will be undefined and then whole fun will be copied. as soon as line enters return, bar() is called and 3 is returned. fn will not read the bar() which is below return
+ *
+ * The function foo() itself will be hoisted in the global scope as its a function declaration. As for inside foo(), its a clear case of function expression for both the bar()functions.
+
+The second bar() will not be read by the interpreter ahead of time (no hoisting). The first one will be executed and returned.
+ *
+ */
+
+/******************************************************************************************************* */
+
+var myVar = 'foo';
+(function () {
+  console.log('Original value was: ' + myVar);
+  var myVar = 'bar';
+  console.log('New value is: ' + myVar);
+})();
+
+/**
+ * Original value was: undefined
+fee.js:85 New value is: bar
+
+first one is in global scope''
+
+even the fun is in global scope
+inside functions local scope, there is one more variable with the same name- it will be assiged with undefined in firstphase. if there was no same var, it would have picked from global scope.
+
  */
