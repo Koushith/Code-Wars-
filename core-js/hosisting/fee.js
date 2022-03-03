@@ -95,3 +95,17 @@ even the fun is in global scope
 inside functions local scope, there is one more variable with the same name- it will be assiged with undefined in firstphase. if there was no same var, it would have picked from global scope.
 
  */
+
+/**
+ * https://www.idontknowjavascript.com/2019/05/javascript-hoisting-interview-question.html
+ * https://medium.com/@pvivek4/hoisting-demystified-with-popular-interview-questions-38a93ea441ff
+ * https://www.geeksforgeeks.org/scoping-hoisting-javascript/
+ * https://www.educative.io/courses/javascript-interview-handbook/JEq08o7oPZJ
+ * https://dev.to/midasxiv/scopes-hoisting-closures-tricky-questions-4c85
+ * https://github.com/30-seconds/30-seconds-of-interviews/blob/master/questions/hoisting.md
+ * https://javascript.plainenglish.io/5-useful-and-tricky-javascript-questions-4b50b5106a2b
+ * https://www.javascripttutorial.net/javascript-hoisting/
+ *
+ *
+ * revisit aftercovering scopes, let,var,const
+ */
