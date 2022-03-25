@@ -6,6 +6,6 @@ const logMyName = (msg) => `Koushith says ${msg}`;
 
 const logWithId = (msg) => `ID :122451 , ${msg}`;
 
-const logqithIdandName = (msg) => logWithId(logMyName(msg));
+const logqithIdandName = () => logWithId(logMyName('hiii'));
 
-console.log(logqithIdandName('Hello Everyone'));
+console.log(logqithIdandName());
