@@ -55,3 +55,15 @@ function counts(sheeps) {
 }
 
 console.log('count', counts(sheeps));
+
+// or
+
+function countSheeps(arrayOfSheep) {
+  var count = 0;
+
+  arrayOfSheep.forEach(function (sheep) {
+    if (sheep) count++;
+  });
+
+  return count;
+}
