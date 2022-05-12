@@ -25,3 +25,21 @@
     - Iterators
     - Maintaining state in Async World
  */
+
+let name = 'safari';
+name = 'chrome';
+function makeFunc() {
+  let name = 'Mozilla';
+
+  function displayName() {
+    name = 'opeara';
+
+    console.log(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+console.log(name);
+myFunc();
+//chrome opeara
