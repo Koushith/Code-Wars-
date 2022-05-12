@@ -15,6 +15,10 @@ class MyArray {
     const lastItem = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length--;
+    if (this.length < 0) {
+      this.length = 0;
+      return {};
+    }
     return lastItem;
   }
   deleteAtIndex(index) {
@@ -42,4 +46,5 @@ myArray.push('are');
 myArray.push('nice');
 myArray.pop();
 myArray.shiftItems(0);
+
 console.log(myArray);
