@@ -37,6 +37,8 @@ class HashTable {
     const currentBucket = this.data[adress]; //   [['xx',52], ['yy',54]] ----> curr[1] --> ['yy',54]
 
     for (let i = 0; i < currentBucket.length; i++) {
+      // curr[0][1] === 'yy'
+      //
       if (currentBucket[i][0] === key) {
         return currentBucket[i][1];
       }
@@ -45,10 +47,10 @@ class HashTable {
   }
 }
 // size is just to save mem- in js you can add n times. it will keep on increasing even if you define using size.
-const myHashTable = new HashTable(1);
+const myHashTable = new HashTable(50);
+myHashTable.set('banana', 500);
+myHashTable.set('apple', 10);
 
-console.log(myHashTable.set('banana', 500));
-console.log(myHashTable.set('apple', 10));
-console.log(myHashTable.set('apple', 20));
+console.log(myHashTable.data);
 console.log(myHashTable.data.length);
 console.log(myHashTable.get('apple'));
