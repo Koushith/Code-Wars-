@@ -21,4 +21,4 @@ console.log('b', b); // [1,2,3,4,hihi]
 a.push('amin');
 
 console.log('b', b); //  [1,2,3,4,hihi, amin]
-console.log('a', a);
+console.log('a', a); //----- if you want to copy not reference- use concat method.
